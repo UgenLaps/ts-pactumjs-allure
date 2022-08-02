@@ -1,0 +1,52 @@
+options:
+  docker: true
+
+pipelines:
+  custom:
+    blockchain_api_tests:
+      - step:
+          name: Run blockchain_api_tests
+          image: node:14.16.1
+          script:
+            - apt-get update && apt-get install -y zip unzip
+            - npm install
+            - npm install jest ts-node make -g
+            - if npm run test; then echo "tests success"; else echo "tests failed, but continue executing"; fi
+            - make download-history
+            - if unzip history_${BITBUCKET_BRANCH}.zip; then
+              echo "downloading ${BITBUCKET_BRANCH} history success";
+              chmod -R 777 $PWD;
+              unzip allure-results_${BITBUCKET_BRANCH}.zip
+              cp -r ./history ./allure-results;
+              else
+              echo "downloading ${BITBUCKET_BRANCH} history from last build failed, but continue executing"; fi;
+            - zip -rTm allure-results_${BITBUCKET_BRANCH}.zip allure-results
+          artifacts:
+            - allure-results_*.zip
+      - step:
+          name: Generate allure report
+          image: 333777999/unzip-allure-cli:1.0
+          script:
+            - apk update && apk add zip
+            - unzip allure-results_${BITBUCKET_BRANCH}.zip
+            - chmod -R 777 $PWD
+            - allure generate -c ./allure-results -o ./allure-report
+            - zip -rTm allure-report_${BITBUCKET_BRANCH}.zip allure-report
+          artifacts:
+            - allure-report_*.zip
+      - step:
+          name: Upload report to S3
+          image: amazon/aws-cli:latest
+          script:
+            - yum -y install unzip make
+            - unzip allure-report_${BITBUCKET_BRANCH}
+            - aws s3 sync ./allure-report s3://${AWS_STORAGE_BUCKET_NAME}/${BITBUCKET_BRANCH}
+            - make slack-notification
+      - step:
+          name: Upload report history to Downloads
+          image: storytel/alpine-bash-curl
+          script:
+            - apk update && apk add unzip zip make
+            - unzip allure-report_${BITBUCKET_BRANCH}.zip
+            - (cd allure-report && zip -rTm history_${BITBUCKET_BRANCH}.zip history)
+            - make upload-history

@@ -1,0 +1,27 @@
+signIn:
+  username: admin
+  password: password123
+
+bookingPost:
+  firstname: Linda
+  lastname: Laps
+  totalprice: 100
+  depositpaid: true
+  bookingdates:
+    checkin: 2022-08-01
+    checkout: 2022-08-10
+  additionalneeds: Breakfast
+
+bookingPut:
+  firstname: Rex
+  lastname: Laps
+  totalprice: 100
+  depositpaid: true
+  bookingdates:
+    checkin: 2022-08-02
+    checkout: 2022-08-11
+  additionalneeds: Breakfast
+
+bookingPatch:
+  firstname: Lord
+  lastname: Laps
