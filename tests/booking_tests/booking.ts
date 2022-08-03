@@ -112,7 +112,7 @@ describe ('Booking', () => {
 
         globalResponse.resp = await spec()
             // .name(`bk-2 /booking/$S{bookingid}`)
-            .get(`/booking/$S{bookingid!!!!}`)
+            .get(`/booking/$S{bookingid}`)
             .withHeaders({
                 'Accept': 'application/json'
             })
