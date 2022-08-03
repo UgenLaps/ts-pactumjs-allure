@@ -111,7 +111,6 @@ describe ('Booking', () => {
         reporter.story("Booking")
 
         globalResponse.resp = await spec()
-            // .name(`bk-2 /booking/$S{bookingid}`)
             .get(`/booking/$S{bookingid}`)
             .withHeaders({
                 'Accept': 'application/json'
@@ -121,12 +120,11 @@ describe ('Booking', () => {
 
     })
 
-    it.skip(`[bk-7] DELETE /booking/{id}`, async () => {
+    it(`[bk-7] DELETE /booking/{id}`, async () => {
 
         reporter.story("Booking")
 
         globalResponse.resp = await spec()
-            // .name(`bk-5 /booking/$S{bookingid}`)
             .delete(`/booking/$S{bookingid}`)
             .withHeaders({
                 'Content-Type': 'application/json',
