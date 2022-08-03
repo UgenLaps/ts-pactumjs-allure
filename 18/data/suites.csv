@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Aug 03 16:04:57 GMT 2022","Wed Aug 03 16:04:57 GMT 2022","149","","Booking","","Booking","[bk-2] POST /auth","[bk-2] POST /auth",""
+"skipped","Wed Aug 03 16:04:58 GMT 2022","Wed Aug 03 16:04:58 GMT 2022","0","","Booking","","Booking","[bk-7] DELETE /booking/{id}","[bk-7] DELETE /booking/{id}",""
+"passed","Wed Aug 03 16:04:57 GMT 2022","Wed Aug 03 16:04:58 GMT 2022","139","","Booking","","Booking","[bk-6] GET /booking/{id}","[bk-6] GET /booking/{id}",""
+"passed","Wed Aug 03 16:04:57 GMT 2022","Wed Aug 03 16:04:57 GMT 2022","165","","Booking","","Booking","[bk-5] PATCH /booking{id}","[bk-5] PATCH /booking{id}",""
+"passed","Wed Aug 03 16:04:57 GMT 2022","Wed Aug 03 16:04:57 GMT 2022","261","","Booking","","Booking","[bk-1] GET /ping","[bk-1] GET /ping",""
+"passed","Wed Aug 03 16:04:57 GMT 2022","Wed Aug 03 16:04:57 GMT 2022","149","","Booking","","Booking","[bk-3] POST /booking","[bk-3] POST /booking",""
+"passed","Wed Aug 03 16:04:57 GMT 2022","Wed Aug 03 16:04:57 GMT 2022","120","","Booking","","Booking","[bk-4] PUT /booking{id}","[bk-4] PUT /booking{id}",""
