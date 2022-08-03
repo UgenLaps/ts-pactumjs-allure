@@ -2,13 +2,9 @@ import * as pactum from "pactum";
 import {request, response, sleep, spec} from "pactum";
 import * as dotenv from 'dotenv';
 import * as path from 'path';
-// import * as yaml from 'js-yaml';
-// import * as fs from 'fs';
-// // import { pjr } from "../../utils/pjr";
-// import {Severity} from "jest-allure/dist/Reporter";
-// import {setJsonLikeAdapter} from "pactum/src/exports/settings";
-// import {ContentType, extendAllureBaseEnvironment} from "jest-circus-allure-environment";
-// import {CreateAPIAttachmentReq, CreateAPIAttachmentRes} from "../../utils/creat_attachment";
+import { globalResponse } from './resp'
+import {CreateAPIAttachmentReq, CreateAPIAttachmentRes} from './creat_attachment'
+import { ContentType } from "jest-circus-allure-environment";
 
 const configFile = '.env';
 declare const reporter: any;
@@ -19,6 +15,7 @@ dotenv.config({
 
 
 beforeEach(async () => {
+    globalResponse.resp = null;
     reporter
     .addEnvironment('REST API Testing Tool', 'PactumJS')
     .addEnvironment('PROD', `${process.env.BASE_URL}`)
@@ -33,13 +30,8 @@ beforeAll(async () => {
 });
 
 afterEach(async () => {
-
-    let resp
-
+    const { resp } = globalResponse
+    reporter.addAttachment('request', CreateAPIAttachmentReq(resp['req']), ContentType.JSON);
+    reporter.addAttachment('response', CreateAPIAttachmentRes(resp['res']), ContentType.JSON);
 
 })
-
-afterAll(async () => {
-    // await mock.stop();
-    // return reporter.end();
-});
