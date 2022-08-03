@@ -1,0 +1,15 @@
+{
+    "url": "https://restful-booker.herokuapp.com/booking/2140",
+    "method": "PUT",
+    "body": {
+        "firstname": "Rex",
+        "lastname": "Laps",
+        "totalprice": 100,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2022-08-02T00:00:00.000Z",
+            "checkout": "2022-08-11T00:00:00.000Z"
+        },
+        "additionalneeds": "Breakfast"
+    }
+}
