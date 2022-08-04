@@ -5,7 +5,7 @@ pipelines:
   custom:
     blockchain_api_tests:
       - step:
-          name: Run blockchain_api_tests
+          name: Run api_tests
           image: node:14.16.1
           script:
             - apt-get update && apt-get install -y zip unzip

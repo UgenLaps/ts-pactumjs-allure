@@ -1,45 +1,75 @@
-**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**
+# Test automation
 
-When you're done, you can delete the content in this README and update the file with details for others getting started with your repository.
+**REST API Testing Tool for all levels in a Test Pyramid**
 
-*We recommend that you open this README in another tab as you perform the tasks below. You can [watch our video](https://youtu.be/0ocf7u76WSo) for a full demo of all the steps in this tutorial. Open the video in a new tab to avoid leaving Bitbucket.*
+**Following tools were used in this framework:**  
+TypeScript, Jest, PactumJS, Allure Report, Docker, GitHub
 
----
+## ABOUT PROJECT
+Project made in my spare time to develop my skills in automation testing.  
 
-## Edit a file
+PactumJS is a REST API Testing Tool used to automate e2e, integration, contract & component (or service level) tests.
+Supported tests executors:
+- *Swift*
+- *Lightweight*
+- *Simple & Powerful*
+- *Compelling Mock Server*
+- *Elegant Data Management*
+- *Extendable & Customizable*
+- *Clear & Comprehensive Testing Style*
+- *Component, Contract & E2E testing of APIs*
 
-You’ll start by editing this README file to learn how to edit a file in Bitbucket.
+## DOCUMENTATION
+This readme offers an basic introduction to the library. Head over to the full documentation at https://pactumjs.github.io
 
-1. Click **Source** on the left side.
-2. Click the README.md link from the list of files.
-3. Click the **Edit** button.
-4. Delete the following text: *Delete this line to make a change to the README from Bitbucket.*
-5. After making your change, click **Commit** and then **Commit** again in the dialog. The commit page will open and you’ll see the change you just made.
-6. Go back to the **Source** page.
+- [API Testing](https://pactumjs.github.io/guides/api-testing.html)
+- [Integration Testing](https://pactumjs.github.io/guides/integration-testing.html)
+- [Component Testing](https://pactumjs.github.io/guides/component-testing.html)
+- [Contract Testing](https://pactumjs.github.io/guides/contract-testing.html)
+- [E2E Testing](https://pactumjs.github.io/guides/e2e-testing.html)
+- [Mock Server](https://pactumjs.github.io/guides/mock-server.html)
 
----
+## USAGE
+PactumJS can be used for all levels of testing in a test pyramid. It can also act as an standalone mock server to generate contracts for contract testing.
 
-## Create a file
+## API Testing
+Tests in pactum are clear and comprehensive. It uses numerous descriptive methods to build your requests and expectations.
 
-Next, you’ll add a new file to this repository.
+###  Simple Test Cases
+<p align="center"><img src="./docs/allure/SimpleTestCases.png"/></p>
 
-1. Click the **New file** button at the top of the **Source** page.
-2. Give the file a filename of **contributors.txt**.
-3. Enter your name in the empty file space.
-4. Click **Commit** and then **Commit** again in the dialog.
-5. Go back to the **Source** page.
 
-Before you move on, go ahead and explore the repository. You've already seen the **Source** page, but check out the **Commits**, **Branches**, and **Settings** pages.
+## FEATURES
+- Support for [Allure Report](https://ugenlaps.github.io/ts-pactumjs-allure)
+- Support for Parallel Testing
+- Support for GitHub [CI/CD](https://github.com/UgenLaps/ts-pactumjs-allure/actions)
+- Support for Docker
+- Support for Fake & Mock data
+- Support for .yaml files
 
----
+## HOW TO RUN TESTS
+There are multiple ways to run tests from this build. It all depends on what do you want to do
 
-## Clone a repository
+## TEST RESULTS AND TEST PROTOCOLS
+### CI/CD
+After each run of the CI/CD cycle, test results will be automatically uploaded to
+the environment where the tests were run (GitHub)
+You can check the test results at the [public access link](https://github.com/UgenLaps/ts-pactumjs-allure/actions)
 
-Use these steps to clone from SourceTree, our client for using the repository command-line free. Cloning allows you to work on your files locally. If you don't yet have SourceTree, [download and install first](https://www.sourcetreeapp.com/). If you prefer to clone from the command line, see [Clone a repository](https://confluence.atlassian.com/x/4whODQ).
+### Localhost
+After each run of a LOCAL loop, two types of log information are stored inside the repository along with test results.
+- Allure HTML report in allure-results directory.
 
-1. You’ll see the clone button under the **Source** heading. Click that button.
-2. Now click **Check out in SourceTree**. You may need to create a SourceTree account or log in.
-3. When you see the **Clone New** dialog in SourceTree, update the destination path and name if you’d like to and then click **Clone**.
-4. Open the directory you just created to see your repository’s files.
+In a terminal, type `allure generate --clean` to generate Allure test results.
 
-Now that you're more familiar with your Bitbucket repository, go ahead and add a new file locally. You can [push your change back to Bitbucket with SourceTree](https://confluence.atlassian.com/x/iqyBMg), or you can [add, commit,](https://confluence.atlassian.com/x/8QhODQ) and [push from the command line](https://confluence.atlassian.com/x/NQ0zDQ).
+<sub><sup>*Allure test results are available for running tests via: Terminal `npm run test`*</sup></sub>
+<p align="center"><img src="./docs/allure/AllureReportOverviewPass.png"/></p>
+<p align="center"><img src="./docs/allure/AllureReportOverviewFail.png"/></p>
+
+
+| FAIL MESSAGE                                      | PASS MESSAGE                                    |
+|---------------------------------------------------|-------------------------------------------------|
+| ![IMG](./docs/allure/AllureReportNoValidTest.png) | ![IMG](./docs/allure/AllureReportValidTest.png) |
+***
+## LICENSE
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

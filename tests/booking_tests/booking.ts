@@ -32,7 +32,6 @@ describe ('Booking', () => {
             .expectStatus(201)
             .expectBodyContains("Created")
             .returns(ctx => ({res: ctx.res, req: ctx.req}));
-
     })
 
     it(`[bk-2] POST /auth`, async () => {
