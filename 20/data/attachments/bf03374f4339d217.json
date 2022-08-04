@@ -1,0 +1,27 @@
+{
+    "headers": {
+        "server": "Cowboy",
+        "connection": "close",
+        "x-powered-by": "Express",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "197",
+        "etag": "W/\"c5-ZvbHvwoDiBPp41qNyJE6EzeiA6g\"",
+        "date": "Thu, 04 Aug 2022 11:26:10 GMT",
+        "via": "1.1 vegur"
+    },
+    "statusCode": 200,
+    "body": {
+        "bookingid": 377,
+        "booking": {
+            "firstname": "Linda",
+            "lastname": "Laps",
+            "totalprice": 100,
+            "depositpaid": true,
+            "bookingdates": {
+                "checkin": "2022-08-01",
+                "checkout": "2022-08-10"
+            },
+            "additionalneeds": "Breakfast"
+        }
+    }
+}
