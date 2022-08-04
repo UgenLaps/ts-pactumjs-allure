@@ -50,19 +50,25 @@ Tests in pactum are clear and comprehensive. It uses numerous descriptive method
 ## HOW TO RUN TESTS
 There are multiple ways to run tests from this build. It all depends on what do you want to do
 
-## TEST RESULTS AND TEST PROTOCOLS
 ### CI/CD
-After each run of the CI/CD cycle, test results will be automatically uploaded to
+- The tests start automatically after a new commit
+- You can run the tests manually in the category [Actions](https://github.com/UgenLaps/ts-pactumjs-allure/actions)
+- After each run of the CI/CD cycle, test results will be automatically uploaded to
 the environment where the tests were run (GitHub)
 You can check the test results at the [public access link](https://ugenlaps.github.io/ts-pactumjs-allure)
 
 ### Localhost
+- Clone the project to your local computer.
+- Run the command `npm install` to install all dependencies
+- Execute the `npm run test` command to run the tests
+
+
 After each run of a LOCAL loop, two types of log information are stored inside the repository along with test results.
 - Allure HTML report in allure-results directory.
 
 In a terminal, type `allure generate --clean` to generate Allure test results.
 
-<sub><sup>*Allure test results are available for running tests via: Terminal `npm run test`*</sup></sub>
+## TEST RESULTS AND TEST PROTOCOLS
 <p align="center"><img src="./docs/allure/AllureReportOverviewPass.png"/></p>
 <p align="center"><img src="./docs/allure/AllureReportOverviewFail.png"/></p>
 
