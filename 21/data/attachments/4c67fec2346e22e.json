@@ -1,0 +1,16 @@
+{
+    "headers": {
+        "server": "Cowboy",
+        "connection": "close",
+        "x-powered-by": "Express",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "27",
+        "etag": "W/\"1b-1oSSCxsRorVWjQeY1R2RoWExUrE\"",
+        "date": "Thu, 04 Aug 2022 11:30:25 GMT",
+        "via": "1.1 vegur"
+    },
+    "statusCode": 200,
+    "body": {
+        "token": "24c033abd6d0440"
+    }
+}
