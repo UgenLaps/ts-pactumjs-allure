@@ -54,7 +54,7 @@ There are multiple ways to run tests from this build. It all depends on what do 
 ### CI/CD
 After each run of the CI/CD cycle, test results will be automatically uploaded to
 the environment where the tests were run (GitHub)
-You can check the test results at the [public access link](https://github.com/UgenLaps/ts-pactumjs-allure/actions)
+You can check the test results at the [public access link](https://ugenlaps.github.io/ts-pactumjs-allure)
 
 ### Localhost
 After each run of a LOCAL loop, two types of log information are stored inside the repository along with test results.
